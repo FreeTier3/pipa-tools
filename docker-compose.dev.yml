@@ -1,0 +1,38 @@
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      # Bind mount do código fonte para hot reload
+      - .:/app
+      - /app/node_modules
+      # Volume nomeado para persistir dados do banco
+      - database_data_dev:/app/database
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5173/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    networks:
+      - app-network-dev
+    # Configurações de segurança
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  database_data_dev:
+    driver: local
+
+networks:
+  app-network-dev:
+    driver: bridge

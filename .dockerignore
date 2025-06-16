@@ -1,0 +1,68 @@
+
+# Dependencies
+node_modules
+npm-debug.log
+.pnpm-debug.log*
+
+# Build outputs
+dist
+build
+.next
+.nuxt
+.cache
+.parcel-cache
+.nyc_output
+coverage
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+README.docker.md
+*.md
+
+# Docker files themselves
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Scripts
+*.bat
+*.sh
+
+# Temporary files
+tmp
+temp

@@ -1,0 +1,125 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10 20; /* preto com azul bem escuro */
+    --foreground: 220 230 255; /* azul muito claro para texto principal */
+
+    --card: 15 15 25;
+    --card-foreground: 220 230 255;
+
+    --popover: 20 20 30;
+    --popover-foreground: 220 230 255;
+
+    --primary: 40 80 180; /* azul mais vibrante */
+    --primary-foreground: 255 255 255; /* branco para contraste */
+
+    --secondary: 30 30 45; /* cinza azulado */
+    --secondary-foreground: 220 230 255;
+
+    --muted: 25 25 35;
+    --muted-foreground: 160 170 190; /* texto mais claro para melhor legibilidade */
+
+    --accent: 60 100 220; /* azul acentuado */
+    --accent-foreground: 255 255 255;
+
+    --destructive: 255 70 85; /* vermelho mais "soft" */
+    --destructive-foreground: 255 255 255;
+
+    --border: 35 35 50;
+    --input: 20 20 30;
+    --ring: 80 120 255;
+
+    --radius: 0.5rem;
+
+    /* Sidebar custom */
+    --sidebar-background: 12 12 20;
+    --sidebar-foreground: 220 230 255;
+    --sidebar-primary: 60 100 220;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 35 35 50;
+    --sidebar-accent-foreground: 220 230 255;
+    --sidebar-border: 40 40 60;
+    --sidebar-ring: 80 120 255;
+    
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    background-color: #000000;
+    color: rgb(220, 230, 255); /* Texto mais claro */
+  }
+
+  html {
+    background-color: #000000;
+  }
+
+  /* Melhorar legibilidade dos labels e textos em formulários */
+  label {
+    color: rgb(220, 230, 255) !important;
+  }
+
+  /* Títulos e cabeçalhos mais legíveis */
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(240, 245, 255) !important;
+  }
+
+  /* Input placeholders mais legíveis */
+  input::placeholder {
+    color: rgb(140, 150, 170) !important;
+  }
+
+  /* Texto de descrição mais legível */
+  p {
+    color: rgb(200, 210, 235);
+  }
+}
+
+@layer utilities {
+  .bg-primary-custom {
+    background-color: #1F48C6;
+  }
+  
+  .text-primary-custom {
+    color: #1F48C6;
+  }
+  
+  .border-primary-custom {
+    border-color: #1F48C6;
+  }
+  
+  .bg-background-custom {
+    background-color: #000000;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #1F48C6, #1a4ce1);
+  }
+  
+  .card-hover {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Classes para texto mais legível */
+  .text-readable {
+    color: rgb(220, 230, 255);
+  }
+
+  .text-readable-muted {
+    color: rgb(160, 170, 190);
+  }
+}
